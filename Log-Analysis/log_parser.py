@@ -6,7 +6,7 @@ import os
 def parse_logs(log_file):
     ssh_pattern = r"Failed password for (?:invalid user )?(\w+) from (\d+\.\d+\.\d+\.\d+)"
 
-    http_403_pattern = r"(\d+\.\d+\.\d+\.\d+\.) .*? \"(?:GET|POST) .*?\" 403"
+    http_403_pattern = r"(\d+\.\d+\.\d+\.\d+) .*? \"(?:GET|POST) .*?\" 403"
 
     if not os.path.exists(log_file):
         print(f"[-] ERROR: The file '{log_file} does not exist.")
